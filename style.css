@@ -1,0 +1,39 @@
+:root {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#view-highscores {
+    color: darkcyan;
+    font-weight: bold;
+    font-size: 4vh;    
+}
+
+.timer {
+    font-size:4vh;
+
+}
+
+.view-highscores:hover {
+    color: plum;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+  }
+
+.start-screen {
+    border: solid black 5px;
+    padding: 3vh;
+    box-shadow: 10px 10px 4px grey;
+    margin: 6vh;
+}
+
+.start-quiz-btn:hover {
+    background-color: darkcyan;
+}
+
+
