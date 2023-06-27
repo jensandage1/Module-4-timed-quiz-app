@@ -36,4 +36,35 @@
     background-color: darkcyan;
 }
 
+.question {
+    font-weight: bolder;
+    text-align: center;
+    font-size: 3vh;
+}
+
+#answers {
+    list-style-type: none;
+   
+}
+
+#answers li {
+    border: solid black 2px;
+    margin: 1vh;
+    background-color: lightseagreen;
+    color: white;
+    padding: 2vh;
+    text-align: center;
+
+}
+
+#answers li:hover {
+    background-color: lightpink;
+}
+
+.question-container {
+    border: solid black 5px;
+    padding: 3vh;
+    box-shadow: 10px 10px 4px grey;
+    margin: 6vh;
+}
 
