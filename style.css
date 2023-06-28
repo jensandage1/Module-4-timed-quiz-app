@@ -68,3 +68,9 @@
     margin: 6vh;
 }
 
+.user-results {
+    background-color: lightgray;
+    margin-top: 10px;
+    line-height: 2;
+}
+
