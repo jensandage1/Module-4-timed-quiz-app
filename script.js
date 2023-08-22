@@ -7,33 +7,36 @@ var questions = [{
     answer: [{ text: "Hypertext Markup Language", isCorrect: true },
             { text: "Hyped up Male Language", isCorrect: false }, 
             {text:"It doesn't stand for anything", isCorrect: false}
-            ]
+            ],
+    correct: "Hypertext Markup Language"
 },
 {
     question: "what does CSS stand for?",
     answer: [{ text: "cats stand silly", isCorrect: false},
             { text: "cascading style sheets", isCorrect: true},
             {text: "curly style sans", isCorrect: false}
-            ]
-},
-{
-    question: "what is they keyboard command to copy information?", //this is not showing up
-    answer: [{ text: "Ctrl + B", isCorrect: false}, 
-            {text: "Ctrl + T", isCorrect: false},
-            {text: "Ctrl + V", isCorrect: true}
-            ]
+            ],
+    correct: "cascading style sheets"
 },
 {
     question: "Which is a website used to store code?",
     answer: [{ text: "github.com", isCorrect: true},
             {text: "google.com", isCorrect: false},
             {text: "facebook.com", isCorrect: false}
-            ]
+            ], 
+    correct: "github.com"
+},
+{
+  question: "What is the keyboard shortcut to copy information?",
+  answer: [{ text: "ctrl+V", isCorrect: false},
+          {text: "alt+C", isCorrect: false},
+          {text: "ctrl+C", isCorrect: true},
+        ],
+  correct: "ctrl+C"
 }
 ]
 
 var currentQuestion = 0;
-var score = 0;
 
 
 
@@ -53,22 +56,23 @@ function nextQuestion () //works except question 3 is missing.
  { answersList.replaceChildren();
   if (currentQuestion < questions.length -1) {
     currentQuestion++;
-    showQuestions(); //missing third question and showing "undefined" above the question options...
+    showQuestions(); //missing third question 
   }
  }
 
 nextQuestionBtn.addEventListener("click", nextQuestion);
 
-
+var score = 0;
 var correctWrong = document.getElementById("correct-wrong");
-var counter = document.getElementById("counter");
-counter.textContent = 0;
+var scoreDisplay = document.getElementById("counter");
+//counter.textContent = 0;
 answersList.addEventListener("click", rightWrong);
 
-function rightWrong () {
-  if (questions[currentQuestion].isCorrect === true) { //not sure what to put in parens here... 
+function rightWrong (e) {
+  if (e.target.textContent == questions[currentQuestion].correct) {  
     correctWrong.textContent = "Correct";
-    counter++;
+    score++;
+    scoreDisplay.textContent = score + "/ 4"; //works for the first one and then it takes extra clicks to update the score..
     //display correct, and add counter.
   } else {
     correctWrong.textContent = "Wrong";
@@ -81,7 +85,7 @@ startQuizBtn.addEventListener("click", showQuestions); //works, div show on butt
 startQuizBtn.addEventListener("click", hideStartScreen); //works
 
 function hideStartScreen () {
-  document.querySelector(".start-screen").style.display = "none";
+  document.querySelector(".start-screen").style.display = "none"; //works
 }
 
 
